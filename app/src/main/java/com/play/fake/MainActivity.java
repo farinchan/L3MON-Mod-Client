@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 //        startService(new Intent(this, MainService.class));
         Intent intent = new Intent(this, MainService.class);
-        PendingIntent pendingIntent = PendingIntent.getService(getApplicationContext(), 1, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getService(getApplicationContext(), 1, intent, PendingIntent.FLAG_MUTABLE);
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, 0, 10000, pendingIntent);
 
@@ -55,10 +55,10 @@ public class MainActivity extends Activity {
 
             Toast toast = Toast.makeText(context, text, duration);
 
-            TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
-            v.setTextColor(Color.RED);
-            v.setTypeface(Typeface.DEFAULT_BOLD);
-            v.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+//            TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
+//            v.setTextColor(Color.RED);
+//            v.setTypeface(Typeface.DEFAULT_BOLD);
+//            v.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
             toast.show();
 
             reqPermissions(this, permissions);

